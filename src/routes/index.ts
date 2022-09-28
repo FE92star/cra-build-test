@@ -1,5 +1,5 @@
-import { lazyLoad } from './lazy'
-import PagesRoutes from './page'
+import { lazyLoad, generateAppRouterNodes } from './lazy'
+// import PagesRoutes from './page'
 
 export interface RouteConfig {
   /** 路径 */
@@ -33,9 +33,11 @@ const NotFoundAndIndex: RouteConfig[] = [
   },
 ]
 
-const Routes: RouteConfig[] = [
+export const Routes: RouteConfig[] = [
   ...NotFoundAndIndex,
-  ...PagesRoutes
+  // ...PagesRoutes
 ]
 
-export default Routes
+const AppRouters = generateAppRouterNodes(Routes)
+
+export default AppRouters

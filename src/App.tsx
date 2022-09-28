@@ -1,8 +1,7 @@
 import React, { Suspense, lazy } from "react"
 import { Routes, Route, Outlet, Navigate } from "react-router-dom"
 
-import RoutesList from './routes'
-import { generateAppRouterNodes } from './routes/lazy'
+import AppRouters from './routes'
 
 const Layout = () => {
   return (
@@ -48,9 +47,6 @@ const RouterApp = () => {
 console.log(RouterApp)
 
 const App = () => {
-  const AppRouters = generateAppRouterNodes(RoutesList)
-  // console.log(AppRouters)
-
   return (
     <Suspense fallback={<div>loading...</div>}>
       <Routes>
